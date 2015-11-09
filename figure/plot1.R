@@ -1,0 +1,5 @@
+a <- read.table("household_power_consumption.txt", na.strings="?", header=T, sep=";")
+a1 <- subset(a, Date == "1/2/2007" | Date == "2/2/2007")
+hist(a1$Global_active_power, col = "red", main = "Global Active Power", ylab = "Frequency", xlab = "Global Active Power (kilowatts)")
+dev.copy(png, file = "plot1.png")
+dev.off()
