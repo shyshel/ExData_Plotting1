@@ -1,7 +1,4 @@
-library(lubridate)
 library(data.table)
-setClass('myDate')
-setAs("character","myDate", function(from) as.Date(from, format="%d/%m/%Y") )
 cc <- c("character", "character", "numeric", rep("NULL",6))
 b <- fread("household_power_consumption.txt", na.strings="?", header=T, sep=";", colClasses = cc)
 b1 <- subset(b, Date == "1/2/2007" | Date == "2/2/2007")
